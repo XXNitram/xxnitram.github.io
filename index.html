@@ -1,7 +1,341 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Film</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1a237e;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #121858;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        section {
+            display: none;
+            padding: 50px;
+        }
+
+        .film-section {
+            background-color: #212121;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .guess-input {
+            width: 50%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #444;
+            border-radius: 5px;
+            color: #ffffff;
+            background-color: #1e1e1e;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .correct-guess {
+            border-color: #4caf50;
+        }
+
+        .incorrect-guess {
+            border-color: #f44336;
+            animation: shake 0.5s;
+        }
+
+        .section-number {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .correct-indicator {
+            color: #4caf50;
+            margin-left: 5px;
+            display: none;
+        }
+
+        .incorrect-indicator {
+            color: #f44336;
+            margin-left: 5px;
+            display: none;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                transform: translateX(-5px);
+            }
+            20%, 40%, 60%, 80% {
+                transform: translateX(5px);
+            }
+        }
+
+        .check-button {
+            cursor: pointer;
+            background-color: #333;
+            border: none;
+            color: #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background-color: #555;
+        }
+
+        .check-button .material-icons {
+            vertical-align: middle;
+        }
+
+        .disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        nav a[href="#section6"] {
+            display: inline;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <header>
+        <h1>Guess the Film</h1>
+    </header>
+
+    <nav>
+        <a href="#section1">1</a>
+        <a href="#section2">2</a>
+        <a href="#section3">3</a>
+        <a href="#section4">4</a>
+        <a href="#section5">5</a>
+        <a href="#section6">Happy Birthday!</a>
+    </nav>
+
+    <section id="section1" class="film-section" style="display: block;">
+        <div class="section-number">Section 1</div>
+        <p>Guess the film quote, picture, or description for Section 1.</p>
+        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
+        <div class="correct-indicator material-icons">check_circle</div>
+        <div class="incorrect-indicator material-icons">cancel</div>
+    </section>
+
+    <section id="section2" class="film-section">
+        <div class="section-number">Section 2</div>
+        <p>Guess the film quote, picture, or description for Section 2.</p>
+        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
+        <div class="correct-indicator material-icons">check_circle</div>
+        <div class="incorrect-indicator material-icons">cancel</div>
+    </section>
+
+    <section id="section3" class="film-section">
+        <div class="section-number">Section 3</div>
+        <p>Guess the film quote, picture, or description for Section 3.</p>
+        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
+        <div class="correct-indicator material-icons">check_circle</div>
+        <div class="incorrect-indicator material-icons">cancel</div>
+    </section>
+
+    <section id="section4" class="film-section">
+        <div class="section-number">Section 4</div>
+        <p>Guess the film quote, picture, or description for Section 4.</p>
+        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
+        <div class="correct-indicator material-icons">check_circle</div>
+        <div class="incorrect-indicator material-icons">cancel</div>
+    </section>
+
+    <section id="section5" class="film-section">
+        <div class="section-number">Section 5</div>
+        <p>Guess the film quote, picture, or description for Section 5.</p>
+        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
+        <div class="correct-indicator material-icons">check_circle</div>
+        <div class="incorrect-indicator material-icons">cancel</div>
+    </section>
+
+    <section id="section6" class="film-section">
+        <div class="section-number">Happy Birthday!</div>
+        <p>Celebrate with us!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Guess the Film. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for handling correct and incorrect guesses
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.guess-input').forEach(function (input) {
+                input.addEventListener('input', function (event) {
+                    // Enable "Check" button only if there's text in the input
+                    var button = this.nextElementSibling;
+                    button.disabled = this.value.trim() === '';
+                });
+
+                input.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter' && this.value.trim() !== '') {
+                        checkGuess(this);
+                    } else if (event.key === 'Enter') {
+                        // If Enter is pressed with an empty input, treat it as incorrect
+                        shakeElement(this);
+                        updateNavNumber(this);
+                        this.classList.remove('correct-guess');
+                        this.classList.add('incorrect-guess');
+                        this.nextElementSibling.style.display = 'inline';
+                        this.nextElementSibling.nextElementSibling.style.display = 'none';
+                        this.style.borderColor = '#f44336';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.check-button').forEach(function (button) {
+                button.disabled = true;
+            });
+
+            document.querySelectorAll('nav a').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    showSection(link.hash);
+                });
+            });
+        });
+
+        // Function to initialize the confetti effect
+        function initConfetti() {
+            window.confettiSettings = {
+                target: 'confetti-canvas',
+                max: 150,
+                size: 2,
+                animate: true,
+                props: ['circle', 'square', 'triangle', 'line'],
+            };
+        }
+
+        // Call the confetti initialization function
+        initConfetti();
+
+        var correctGuessCount = 0;
+
+        function checkGuess(input) {
+            var section = input.closest('.film-section');
+            var sectionNumber = section.querySelector('.section-number').textContent;
+            var correctIndicator = section.querySelector('.correct-indicator');
+            var incorrectIndicator = section.querySelector('.incorrect-indicator');
+
+            // Simulate correct guess (replace this with your actual logic)
+            var isCorrect = Math.random() < 0.5;
+
+            if (isCorrect) {
+                input.classList.remove('incorrect-guess');
+                input.classList.add('correct-guess', 'disabled');
+                input.disabled = true;
+                correctIndicator.style.display = 'inline';
+                incorrectIndicator.style.display = 'none';
+                input.style.borderColor = '#4caf50';
+                updateNavNumber(input);
+
+                // Increment the correct guess count
+                correctGuessCount++;
+
+                // Check if all 5 guesses are correct
+                if (correctGuessCount === 5) {
+                    // Automatically navigate to the "Happy Birthday!" section
+                    showSection('#section6');
+                    document.querySelector('nav a[href="#section6"]').style.display = 'inline';
+                }
+            } else {
+                input.classList.remove('correct-guess');
+                input.classList.add('incorrect-guess');
+                correctIndicator.style.display = 'none';
+                incorrectIndicator.style.display = 'inline';
+                input.style.borderColor = '#f44336';
+                updateNavNumber(input);
+                shakeElement(input);
+            }
+        }
+
+        function shakeElement(element) {
+            element.style.animation = 'shake 0.5s';
+            setTimeout(function () {
+                element.style.animation = '';
+            }, 500);
+        }
+
+        function updateNavNumber(input) {
+            var sectionNumber = input.closest('.film-section').querySelector('.section-number').textContent;
+            var numericSection = sectionNumber.replace('Section ', '');
+            var navNumber = document.querySelector('a[href="#section' + numericSection + '"]');
+            if (input.disabled == true) {
+                navNumber.style.backgroundColor = '#4caf50';
+            } else {
+                navNumber.style.backgroundColor = '#f44336';
+            }
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.film-section').forEach(function (section) {
+                section.style.display = 'none';
+            });
+
+            var targetSection = document.querySelector(sectionId);
+            targetSection.style.display = 'block';
+
+            // Start confetti effect if on #section6
+            if (sectionId === '#section6') {
+                playConfetti(); // Trigger the confetti effect
+            }
+        }
+
+        // Recursive function to play confetti continuously
+        function playConfetti() {
+            confetti(confettiSettings);
+            setTimeout(playConfetti, 2000); // Adjust the interval as needed (in milliseconds)
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
 </body>
 </html>
