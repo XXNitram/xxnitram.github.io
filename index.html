@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Film</title>
+    <title>Rätselraten</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
             background-color: #1e1e1e;
@@ -17,7 +18,7 @@
         }
 
         header {
-            background-color: #1a237e;
+            background-color: #018dc0;
             padding: 20px;
             border-radius: 10px 10px 0 0;
         }
@@ -25,7 +26,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #121858;
+            background-color: #004c62;
             padding: 10px;
             border-radius: 0 0 10px 10px;
         }
@@ -58,7 +59,7 @@
         }
 
         .guess-input {
-            width: 50%;
+            width: 30%;
             padding: 10px;
             margin-top: 10px;
             border: 2px solid #444;
@@ -133,14 +134,14 @@
         }
 
         nav a[href="#section6"] {
-            display: inline;
+            display: none;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Guess the Film</h1>
+        <h1>Et Aenigma pergit!</h1>
     </header>
 
     <nav>
@@ -153,45 +154,76 @@
     </nav>
 
     <section id="section1" class="film-section" style="display: block;">
-        <div class="section-number">Section 1</div>
-        <p>Guess the film quote, picture, or description for Section 1.</p>
-        <input type="text" class="guess-input" placeholder="Enter your guess">
-        <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
+        <div class="section-number">Film 1</div>
+        <p>Errate den Film anhand der Bilder, von schwierig zu leicht!</p> 
+        <div class="w3-content w3-display-container">
+            <img class="film1Slides" src="catchme/1.png" style="width:100%">
+            <img class="film1Slides" src="catchme/2.png" style="width:100%">
+            <img class="film1Slides" src="catchme/3.png" style="width:100%">
+            <img class="film1Slides" src="catchme/4.png" style="width:100%">
+            <img class="film1Slides" src="catchme/5.png" style="width:100%">
+            <img class="film1Slides" src="catchme/6.png" style="width:100%">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 0)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 0)">&#10095;</button>
+        </div>
+        <input type="text" class="guess-input" placeholder="Gib hier den zu erratenden Film ein!">
+        <button id="btn1" class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
         <div class="correct-indicator material-icons">check_circle</div>
         <div class="incorrect-indicator material-icons">cancel</div>
     </section>
 
     <section id="section2" class="film-section">
-        <div class="section-number">Section 2</div>
-        <p>Guess the film quote, picture, or description for Section 2.</p>
-        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <div class="section-number">Film 2</div>
+        <p>Drei Freunde wollen eine Legende aufklären, die sich um eine unsichtbare Macht dreht.</p> 
+        <p>Der einzige Hinweis auf ihr Schicksal ist ein Haufen von Videobändern, die später gefunden werden. Am Ende sehen sie nur noch eine Ecke.</p>
+        <input type="text" class="guess-input" placeholder="Gib hier den zu erratenden Film ein!">
         <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
         <div class="correct-indicator material-icons">check_circle</div>
         <div class="incorrect-indicator material-icons">cancel</div>
     </section>
 
     <section id="section3" class="film-section">
-        <div class="section-number">Section 3</div>
-        <p>Guess the film quote, picture, or description for Section 3.</p>
-        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <div class="section-number">Film 3</div>
+        <p>Errate den Film anhand der Bilder, von schwierig zu leicht!</p> 
+        <div class="w3-content w3-display-container">
+            <img class="film3Slides" src="split/1.png" style="width:100%">
+            <img class="film3Slides" src="split/2.png" style="width:100%">
+            <img class="film3Slides" src="split/3.png" style="width:100%">
+            <img class="film3Slides" src="split/4.png" style="width:100%">
+            <img class="film3Slides" src="split/5.png" style="width:100%">
+            <img class="film3Slides" src="split/6.png" style="width:100%">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 1)">&#10095;</button>
+        </div>
+        <input type="text" class="guess-input" placeholder="Gib hier den zu erratenden Film ein!">
         <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
         <div class="correct-indicator material-icons">check_circle</div>
         <div class="incorrect-indicator material-icons">cancel</div>
     </section>
 
     <section id="section4" class="film-section">
-        <div class="section-number">Section 4</div>
+        <div class="section-number">Film 4</div>
         <p>Guess the film quote, picture, or description for Section 4.</p>
-        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <input type="text" class="guess-input" placeholder="Gib hier den zu erratenden Film ein!">
         <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
         <div class="correct-indicator material-icons">check_circle</div>
         <div class="incorrect-indicator material-icons">cancel</div>
     </section>
 
     <section id="section5" class="film-section">
-        <div class="section-number">Section 5</div>
-        <p>Guess the film quote, picture, or description for Section 5.</p>
-        <input type="text" class="guess-input" placeholder="Enter your guess">
+        <div class="section-number">Film 5</div>
+        <p>Errate den Film anhand der Bilder, von schwierig zu leicht!</p> 
+        <div class="w3-content w3-display-container">
+            <img class="film5Slides" src="casinoroyale/1.png" style="width:100%">
+            <img class="film5Slides" src="casinoroyale/2.png" style="width:100%">
+            <img class="film5Slides" src="casinoroyale/3.png" style="width:100%">
+            <img class="film5Slides" src="casinoroyale/4.png" style="width:100%">
+            <img class="film5Slides" src="casinoroyale/5.png" style="width:100%">
+            <img class="film5Slides" src="casinoroyale/6.png" style="width:100%">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 2)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 2)">&#10095;</button>
+        </div>
+        <input type="text" class="guess-input" placeholder="Gib hier den zu erratenden Film ein!">
         <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
         <div class="correct-indicator material-icons">check_circle</div>
         <div class="incorrect-indicator material-icons">cancel</div>
@@ -203,7 +235,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Guess the Film. All rights reserved.</p>
+        <p>&copy; 2024 Nitramproductions. All rights reserved.</p>
     </footer>
 
     <script>
@@ -263,20 +295,39 @@
         function checkGuess(input) {
             var section = input.closest('.film-section');
             var sectionNumber = section.querySelector('.section-number').textContent;
+            var numericSection = parseInt(sectionNumber.replace('Film ', ''));
             var correctIndicator = section.querySelector('.correct-indicator');
             var incorrectIndicator = section.querySelector('.incorrect-indicator');
+            var button = section.querySelector('.check-button');
+            var guessInput = section.querySelector('.guess-input');
+            var guessText = guessInput.value.trim().toLowerCase();
+            
+            console.log('text:', guessText);
 
-            // Simulate correct guess (replace this with your actual logic)
-            var isCorrect = Math.random() < 0.5;
+            var isCorrect;
+            if (numericSection === 1 && guessText === "catch me if you can") {
+                isCorrect = true;
+            } else if (numericSection === 2 && guessText === "blair witch project") {
+                isCorrect = true;
+            } else if (numericSection === 3 && guessText === "split") {
+                isCorrect = true;
+            } else if (numericSection === 4 && (guessText === "the incredibles") || (guessText === "die unglaublichen") || (guessText === "die unglaublichen - the incredibles")) {
+                isCorrect = true;
+            } else if (numericSection === 5 && (guessText === "casino royale") || (guessText === "james bond 007: casino royale")) {
+                isCorrect = true;
+            } else {
+                isCorrect = false;
+            }
 
             if (isCorrect) {
-                input.classList.remove('incorrect-guess');
-                input.classList.add('correct-guess', 'disabled');
-                input.disabled = true;
+                guessInput.classList.remove('incorrect-guess');
+                guessInput.classList.add('correct-guess', 'disabled');
+                button.classList.add('correct-guess', 'disabled');
+                guessInput.disabled = true;
                 correctIndicator.style.display = 'inline';
                 incorrectIndicator.style.display = 'none';
-                input.style.borderColor = '#4caf50';
-                updateNavNumber(input);
+                guessInput.style.borderColor = '#4caf50';
+                updateNavNumber(guessInput);
 
                 // Increment the correct guess count
                 correctGuessCount++;
@@ -288,13 +339,13 @@
                     document.querySelector('nav a[href="#section6"]').style.display = 'inline';
                 }
             } else {
-                input.classList.remove('correct-guess');
-                input.classList.add('incorrect-guess');
+                guessInput.classList.remove('correct-guess');
+                guessInput.classList.add('incorrect-guess');
                 correctIndicator.style.display = 'none';
                 incorrectIndicator.style.display = 'inline';
-                input.style.borderColor = '#f44336';
-                updateNavNumber(input);
-                shakeElement(input);
+                guessInput.style.borderColor = '#f44336';
+                updateNavNumber(guessInput);
+                shakeElement(guessInput);
             }
         }
 
@@ -307,12 +358,20 @@
 
         function updateNavNumber(input) {
             var sectionNumber = input.closest('.film-section').querySelector('.section-number').textContent;
-            var numericSection = sectionNumber.replace('Section ', '');
+            var numericSection = sectionNumber.replace('Film ', '');
             var navNumber = document.querySelector('a[href="#section' + numericSection + '"]');
-            if (input.disabled == true) {
-                navNumber.style.backgroundColor = '#4caf50';
+            
+            console.log('numericSection:', numericSection);
+            console.log('navNumber:', navNumber);
+
+            if (navNumber) {
+                if (input.classList.contains('correct-guess')) {
+                    navNumber.style.backgroundColor = '#4caf50';
+                } else {
+                    navNumber.style.backgroundColor = '#f44336';
+                }
             } else {
-                navNumber.style.backgroundColor = '#f44336';
+                console.error('Navigation link not found for section ' + numericSection);
             }
         }
 
@@ -328,6 +387,31 @@
             if (sectionId === '#section6') {
                 playConfetti(); // Trigger the confetti effect
             }
+        }
+
+        var slideIndex = [1,1,1];
+        var slideId = ["film1Slides", "film3Slides", "film5Slides"]
+        showDivs(1, 0);
+        showDivs(1, 1);
+        showDivs(1, 2);
+
+        function plusDivs(n, no) {
+            showDivs(slideIndex[no] += n, no);
+        }
+
+        function showDivs(n, no) {
+            var i;
+            var x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) {
+                slideIndex[no] = 1
+            }
+            if (n < 1) {
+                slideIndex[no] = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex[no]-1].style.display = "block";  
         }
 
         // Recursive function to play confetti continuously
