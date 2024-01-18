@@ -204,6 +204,21 @@
         .modal-body {
             padding: 2px 16px;
         }
+
+        .side-by-side-image {
+            width: 48%; /* Adjust the width as needed, leave some space for margins */
+            margin: 1%; /* Add a small margin between the images */
+            display: inline-block; /* Display the images inline */
+            vertical-align: top; /* Align images to the top to ensure consistent alignment */
+        }
+
+        /* Responsive styling for small screens */
+        @media (max-width: 768px) {
+            .side-by-side-image {
+                width: 100%; /* Make images full width on smaller screens */
+                margin: 0; /* Remove margin for full width */
+            }
+        }
     </style>
 </head>
 <body>
@@ -218,7 +233,7 @@
         <a href="#section3">3</a>
         <a href="#section4">4</a>
         <a href="#section5">5</a>
-        <a href="#section6">Happy Birthday!</a>
+        <a href="#section6">Geschafft!</a>
     </nav>
 
     <div id="myModal" class="modal" style="display: block;">
@@ -230,7 +245,7 @@
             <h2>Et Aenigma pergit!</h2>
           </div>
           <div class="modal-body">
-            <p>Herzlichen Glückwunsch du hast es bis hierhin geschafft!</p>
+            <p>Herzlichen Glückwunsch, du hast es bis hierhin geschafft!</p>
             <p>Noch bist du nicht am Ende des Rätsels, vor dir liegt noch ein kleines Filmquiz!</p>
             <p>Deine Aufgabe ist es, fünf Filme zu erraten: Mal liegt dir eine Beschreibung vor, mal ein paar Standbilder des gesuchten Films!</p>
             <p>Wenn du denkst, du hast eine Vermutung, schreibe diese in das Textfeld unten und drücke Enter oder benutze den Knopf! (Es zählt entweder der deutsche oder englische Filmtitel!)</p>
@@ -291,7 +306,8 @@
 
     <section id="section4" class="film-section">
         <div class="section-number">Film 4</div>
-        <p>Guess the film quote, picture, or description for Section 4.</p>
+        <p>Sie waren einst die Helden der Stadt, doch nun müssen sie wahres Ich verbergen.</p>
+        <p>Als eine geheime Mission sie aus ihrem Alltagstrott reißt, müssen sie sich nicht nur mit einem alten Rivalen auseinandersetzen, sondern auch mit ihren eigenen Familienproblemen.</p>
         <input type="text" class="guess-input" placeholder="Gib hier den zu erratenden Film ein!">
         <button class="check-button" onclick="checkGuess(this)"><span class="material-icons">send</span></button>
         <div class="correct-indicator material-icons">check_circle</div>
@@ -319,7 +335,20 @@
 
     <section id="section6" class="film-section">
         <div class="section-number">Happy Birthday!</div>
-        <p>Celebrate with us!</p>
+        <p>Herzlichen Glückwunsch, du hast es geschafft! Ich bin stolz auf dich!</p>
+        <p>Hab dich ganz doll lieb! Hier sind ein paar lustige Bilder von uns, die ich gefunden habe:</p>
+        
+            <video width="640" height="480" autoplay loop muted>
+                <source src="solution/clip.mov" type="video/mp4" />
+            </video>
+        <div class="image-container">
+            <img src="solution/1.JPG" style="width:25%" class="side-by-side-image">
+            <img src="solution/2.JPG" style="width:25%" class="side-by-side-image">
+        </div>
+        <div class="image-container">
+            <img src="solution/3.JPG" style="width:25%" class="side-by-side-image">
+            <img src="solution/4.JPG" style="width:25%" class="side-by-side-image">
+        </div>
     </section>
 
     <footer>
@@ -404,20 +433,6 @@
                 });
             });
         });
-
-        // Function to initialize the confetti effect
-        function initConfetti() {
-            window.confettiSettings = {
-                target: 'confetti-canvas',
-                max: 150,
-                size: 2,
-                animate: true,
-                props: ['circle', 'square', 'triangle', 'line'],
-            };
-        }
-
-        // Call the confetti initialization function
-        initConfetti();
 
         var correctGuessCount = 0;
 
@@ -520,8 +535,21 @@
 
         // Recursive function to play confetti continuously
         function playConfetti() {
-            confetti(confettiSettings);
-            setTimeout(playConfetti, 2000); // Adjust the interval as needed (in milliseconds)
+            confetti({
+                target: 'confetti-canvas',
+                max: 150,
+                size: 2,
+                animate: true,
+                props: ['circle', 'square', 'triangle', 'line'],
+                particleCount: 150, // Number of confetti particles
+                spread: 360, // Angle in which to spread confetti (360 means in all directions)
+                origin:{
+                    x: Math.random(),
+                    // since they fall down, start a bit higher than random
+                    y: Math.random() - 0.2
+                }
+            });
+            setTimeout(playConfetti, 3000); // Adjust the interval as needed (in milliseconds)
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
