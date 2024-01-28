@@ -442,6 +442,7 @@
         });
 
         var correctGuessCount = 0;
+        var firstTime = true;
 
         function checkGuess(input) {
             var section = input.closest('.film-section');
@@ -536,7 +537,10 @@
 
             // Start confetti effect if on #section6
             if (sectionId === '#section6') {
-                playConfetti(); // Trigger the confetti effect
+                if (firstTime) {
+                    playConfetti(); // Trigger the confetti effect
+                    firstTime = false;
+                }
             }
         }
 
